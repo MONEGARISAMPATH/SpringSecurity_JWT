@@ -31,7 +31,7 @@ public class StudentController {
 		return "Hey This Is Sampath,Java Developer"  + "   " + request.getSession().getId();
 	}
 	
-	@GetMapping("/admin")
+	@GetMapping("/admin/{id}")
 	@PreAuthorize("hasRole('ADMIN')")
 	@ResponseStatus(value=HttpStatus.OK)
 	public Student findById(@PathVariable Integer id) {
