@@ -41,7 +41,7 @@ public class SecurityConfig {
 		
 	 return http.csrf(customizer -> customizer.disable())
 				.authorizeHttpRequests(request -> request
-						.requestMatchers("/student/register","/student/login").permitAll()//Except this endpoint has authentication
+						.requestMatchers("/student/register","/student/login","/actuator/**").permitAll()//Except this endpoint has authentication
 						.requestMatchers("/student/admin/**").hasAuthority("ADMIN")
 						.requestMatchers("/student/allstudents").hasAuthority("STUDENT")
 						.anyRequest().authenticated())
