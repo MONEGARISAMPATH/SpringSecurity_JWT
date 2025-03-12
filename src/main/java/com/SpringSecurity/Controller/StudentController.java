@@ -38,7 +38,6 @@ public class StudentController {
 		return studentService.findById(id);
 	}
 	
-	//added teh comment
 	@GetMapping("/allstudents")
 	@PreAuthorize("hasRole('STUDENT')")
 	@ResponseStatus(value=HttpStatus.OK)
